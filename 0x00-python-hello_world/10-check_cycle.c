@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 	verify = list;
 	tmp = list;
 
-	if (tmp && verify && verify->next)
+	while (tmp && verify && verify->next)
 	{
 		verify = verify->next->next;
 		tmp = tmp->next;
