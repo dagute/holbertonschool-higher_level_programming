@@ -2,7 +2,7 @@
 
 
 def no_c(my_string):
-    new_word = ""
+    new_word = ''
     for word in my_string:
         if word != 'c' and word != 'C':
             new_word += word
