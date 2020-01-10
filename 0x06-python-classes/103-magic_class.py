@@ -18,4 +18,4 @@ class MagicClass:
 
         def circumference(self):
             """perimeter"""
-            return 2 * math.pi * self.__radius
+            return (2 * math.pi * self.__radius)
