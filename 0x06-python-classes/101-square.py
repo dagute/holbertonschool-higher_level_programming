@@ -5,13 +5,8 @@
 class Square:
     """Square Class"""
     def __init__(self, size=0, position=(0, 0)):
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-            self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -35,21 +30,15 @@ class Square:
     @position.setter
     def position(self, value):
         """set position"""
-        if int(value[0]) is not int or int(value[1]) is not int:
+        if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
+        if len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif (len(position) is not 2 or type(position[0]) is not int or
-              type(position[1]) is not int):
+        if not (isinstance(value[0], int) and isinstance(value[1], int)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif position[0] < 0 or position[1] < 0:
+        if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) is not 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif type(value) is not tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def area(self):
         """returns the current square area"""
@@ -63,16 +52,16 @@ class Square:
             for x in range(self.__position[1]):
                 print()
             for x in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+                print(" " * self.position[0] + "#" * self.__size)
 
     def __str__(self):
         """define str"""
         new = ""
         if self.__size == 0:
             return new
-        for x in range(self.__size - 1):
-            new += self.__size * "#" + self.__position[0] * " " + "\n"
         for x in range(self.__position[1]):
             new += "\n"
-        new += " " * self.__position[0] + "#" * self.__size
+        for x in range(self.__size - 1):
+            new += " " * self.__position[0] + "#" * self.__size + "\n"
+        new += " " * self.position[0] + "#" * self.__size
         return new
