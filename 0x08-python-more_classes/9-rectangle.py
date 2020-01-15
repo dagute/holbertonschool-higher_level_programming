@@ -54,11 +54,11 @@ class Rectangle:
 
     def __str__(self):
         """String representation"""
+        newone = ""
         if self.__width == 0 or self.__height == 0:
             return newone
         if not isinstance(self.print_symbol, str):
             self.print_symbol = str(self.print_symbol)
-        newone = ""
         for width in range(self.__height - 1):
             newone += (self.print_symbol * self.__width) + '\n'
         newone += (self.print_symbol * self.__width)
@@ -82,7 +82,8 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
-        return rect_2
+        else:
+            return rect_2
 
     @classmethod
     def square(cls, size=0):
