@@ -50,9 +50,9 @@ class Rectangle:
 
     def __str__(self):
         """String representation"""
+        newone= ""
         if self.__width == 0 or self.__height == 0:
             return newone
-        newone = ""
         for width in range(self.__height - 1):
             newone += ("#" * self.__width) + '\n'
         newone += ("#" * self.__width)
