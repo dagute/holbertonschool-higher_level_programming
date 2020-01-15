@@ -66,7 +66,7 @@ class Rectangle:
 
     def __repr__(self):
         """define repr"""
-        return ("Rectangle({}, {})".format(self.__width, self.__height))
+        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
     def __del__(self):
         """define delete"""
@@ -88,4 +88,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """returns a new Rectangle instance with width == height == size"""
-        return cls(size, size)
+        return Rectangle(size, size)
