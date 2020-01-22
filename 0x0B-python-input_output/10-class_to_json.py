@@ -10,7 +10,7 @@ def class_to_json(obj):
     """
     def class_to_json(obj):
         """define class to json"""
-        if hasattr(obj, "__slots__"):
-            return obj.__slots__
         if hasattr(obj, "__dict__"):
             return obj.__dict__
+        if hasattr(obj, "__slots__"):
+            return obj.__slots__
