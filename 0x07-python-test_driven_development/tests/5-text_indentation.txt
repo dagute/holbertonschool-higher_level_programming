@@ -23,7 +23,6 @@ What's yours?
 <BLANKLINE>
 Is it blue?
 <BLANKLINE>
-<BLANKLINE>
 >>> text_indentation("my")
 my
 
