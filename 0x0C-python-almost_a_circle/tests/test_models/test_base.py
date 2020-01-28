@@ -12,7 +12,7 @@ class TestBaseClassCreation(unittest.TestCase):
     """Test class for Base class instantiation tests"""
 
     def test_pep8_conformance_base(self):
-        """Test that we conform to PEP8."""
+        """Test that we conform to PEP8"""
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])
         self.assertEqual(result.total_errors, 0,
