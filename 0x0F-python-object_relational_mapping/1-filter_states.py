@@ -12,8 +12,11 @@ if __name__ == "__main__":
                          passwd=argv[2], db=argv[3], charset="utf8")
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY" +
-                "states.name LIKE 'N%' ORDER BY states.id ASC")
+    cur.execute("""
+    SELECT * FROM states
+    WHERE name LIKE BYNARY 'N%'
+    ORDER BY states.id ASC
+    """)
 
     rows = cur.fetchall()
     for row in rows:
