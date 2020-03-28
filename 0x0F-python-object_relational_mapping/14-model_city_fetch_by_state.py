@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """prints all City objects"""
-import sys
+import MySQLdb
+from sys import argv
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
