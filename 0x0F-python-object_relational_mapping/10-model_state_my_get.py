@@ -14,8 +14,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State)
-    r = states.filter_by(name=state_name).first()
-    print(r.id if r else "Not found")
+    states = session.query(State).filter(State.name == argv[4]).all()
+    if states:
+        for state in states:
+            print("{}".format(state.id))
+    else:
+        print("Not found")
 
     session.close()
