@@ -10,7 +10,7 @@ from sys import argv
 if __name__ == "__main__":
 
     gc = get("https://api.github.com/repos/{}/{}/commits".
-               format(argv[2], argv[1])).json()
+             format(argv[2], argv[1])).json()
 
     x = 0
     for arg in gc:
