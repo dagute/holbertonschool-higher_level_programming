@@ -1,5 +1,5 @@
 #!/usr/bin/node
-function add(a, b) {
+function add (a, b) {
   let x1 = parseInt(a);
   let x2 = parseInt(b);
   console.log(x1 + x2);
