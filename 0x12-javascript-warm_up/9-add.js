@@ -1,7 +1,4 @@
-#!/usr/bin/node
 function add (a, b) {
-  let x1 = parseInt(a);
-  let x2 = parseInt(b);
-  console.log(x1 + x2);
+  return parseInt(a) + parseInt(b);
 }
-add(process.argv[2], process.argv[3]);
+console.log(add(process.argv[2], process.argv[3]));
