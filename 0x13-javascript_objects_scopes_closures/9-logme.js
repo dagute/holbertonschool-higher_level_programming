@@ -2,6 +2,6 @@
 
 let total = 0;
 exports.logMe = function (item) {
-  console.log(total + ':' + item)
+  console.log(total + ': ' + item)
   total++;
 };
